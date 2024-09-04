@@ -5,6 +5,7 @@ import Home from "./routes/Home";
 import Login from "./routes/Login";
 import NotFound from "./routes/NotFound";
 import RequireAuth from "./components/RequireAuth";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
