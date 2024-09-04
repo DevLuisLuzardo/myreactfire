@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
+import Unete from "./routes/Unete";
 import Login from "./routes/Login";
 import NotFound from "./routes/NotFound";
 import RequireAuth from "./components/RequireAuth";
@@ -10,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
     <>
+
       <Navbar />
 
       {/* 
@@ -22,7 +24,15 @@ const App = () => {
           path="/"
           element={
             <RequireAuth>
-              <Home />              
+              <Home />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/unete"
+          element={
+            <RequireAuth>
+              <Unete />
             </RequireAuth>
           }
         />
