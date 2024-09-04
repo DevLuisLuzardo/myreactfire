@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
 import Login from "./routes/Login";
 import NotFound from "./routes/NotFound";
+import RequireAuth from "./components/RequireAuth";
 
 const App = () => {
   return (
@@ -15,9 +16,15 @@ const App = () => {
       */}
 
       <Routes>
-        
-        <Route path="/" element={<Home />} />
-
+        //Agregar Routes en RequireAuth
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home />              
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
